@@ -2,6 +2,9 @@ steps:
   - name: gcr.io/cloud-builders/gsutil
     args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://flask_ops"]
     
+  - name: docker
+    args: ["login", "-u", "rdefente", "-p", "b33pb00p"]
+    
   - name: python3
     args: ["-m", "venv", "venv"]
     
