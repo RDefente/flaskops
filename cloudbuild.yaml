@@ -6,7 +6,9 @@ steps:
     args: ['pip3', 'install', 'flask']
     
   - name: 'ubuntu'
-    args: ['export', 'FLASK_APP=/workspace/hello_world.py']
+    args: ['echo', 'hello there!']
+    env:
+        - 'FLASK_APP=${_FLASK_APP}'
     
   - name: 'python'
     args: ['flask', 'run', '--host', '0.0.0.0']
