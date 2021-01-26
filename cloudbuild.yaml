@@ -1,0 +1,17 @@
+steps:
+  - name: gcr.io/cloud-builders/gsutil
+    args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://flask_ops"]
+    
+  - name: py
+    args: ["-3", "-m", "venv", "venv"]
+    
+  - name: venv\Scripts\activate
+  
+  - name: pip
+    args: ["install", "flask"]
+    
+  - name: set
+    args: ["FLASK_APP=hello_world.py"]
+    
+  - name: flask
+    args: ["run", "--host", "0.0.0.0"]
