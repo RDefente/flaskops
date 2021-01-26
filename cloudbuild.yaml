@@ -1,26 +1,23 @@
 steps:
-  - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://flask_ops"]
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-r', '-c', '-d', '.', 'gs://flask_ops']
     
-  - name: sudo
-    args: ["apt", "get", "python3"]
+  - name: 'python'
+    args: ['python3', '-m', 'venv', 'venv']
     
-  - name: python3
-    args: ["-m", "venv", "venv"]
-    
-  - name: cd
-    args: ["venv/Scripts"]
+  - name: 'cd'
+    args: ['venv/Scripts']
   
-  - name: activate
+  - name: 'activate'
   
-  - name: cd
-    args: ["../../"]
+  - name: 'cd'
+    args: ['../../']
   
-  - name: pip
-    args: ["install", "flask"]
+  - name: 'python'
+    args: ['pip3', 'install', 'flask']
     
-  - name: set
-    args: ["FLASK_APP=hello_world.py"]
+  - name: 'set'
+    args: ['FLASK_APP=hello_world.py']
     
-  - name: flask
-    args: ["run", "--host", "0.0.0.0"]
+  - name: 'flask'
+    args: ['run', '--host', '0.0.0.0']
