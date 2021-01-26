@@ -9,6 +9,9 @@ steps:
     args: ['echo', 'hello there!']
     env:
         - 'FLASK_APP=${_FLASK_APP}'
+        
+  - name: 'help'
+    args: ['man', 'flask']
     
-  - name: 'flask'
+  - name: 'python'
     args: ['flask', 'run', '--host', '0.0.0.0']
