@@ -10,5 +10,5 @@ steps:
     env:
         - 'FLASK_APP=${_FLASK_APP}'
     
-  - name: 'python'
+  - name: 'flask'
     args: ['flask', 'run', '--host', '0.0.0.0']
