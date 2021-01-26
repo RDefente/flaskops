@@ -5,7 +5,13 @@ steps:
   - name: py
     args: ["-3", "-m", "venv", "venv"]
     
-  - name: venv/Scripts/activate
+  - name: cd
+    args: ["venv/Scripts"]
+  
+  - name: activate
+  
+  - name: cd
+    args: ["../../"]
   
   - name: pip
     args: ["install", "flask"]
