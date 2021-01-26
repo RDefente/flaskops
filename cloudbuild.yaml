@@ -2,8 +2,8 @@ steps:
   - name: gcr.io/cloud-builders/gsutil
     args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://flask_ops"]
     
-  - name: py
-    args: ["-3", "-m", "venv", "venv"]
+  - name: python3
+    args: ["-m", "venv", "venv"]
     
   - name: cd
     args: ["venv/Scripts"]
