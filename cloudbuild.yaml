@@ -6,7 +6,7 @@ steps:
     args: ['python3', '-m', 'venv', 'venv']
     
   - name: 'ubuntu'
-    args: ['venv/Scripts/activate']
+    args: ['.', 'venv/bin/activate']
   
   - name: 'python'
     args: ['pip3', 'install', 'flask']
