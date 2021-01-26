@@ -7,7 +7,6 @@ steps:
     
   - name: 'ubuntu'
     args: ['ls', 'venv/bin']
-    args: ['.', 'venv/bin/activate']
   
   - name: 'python'
     args: ['pip3', 'install', 'flask']
