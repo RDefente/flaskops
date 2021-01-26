@@ -6,7 +6,7 @@ steps:
     args: ['python3', '-m', 'venv', 'venv']
     
   - name: 'ubuntu'
-    args: ['ls', 'venv/bin']
+    args: ['pwd']
   
   - name: 'python'
     args: ['pip3', 'install', 'flask']
