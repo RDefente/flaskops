@@ -1,18 +1,12 @@
 steps:
   - name: 'gcr.io/cloud-builders/gsutil'
     args: ['-m', 'rsync', '-r', '-c', '-d', '.', 'gs://flask_ops']
-    
-  - name: 'python'
-    args: ['python3', '-m', 'venv', 'venv']
-    
-  - name: 'ubuntu'
-    args: ['pwd']
   
   - name: 'python'
     args: ['pip3', 'install', 'flask']
     
   - name: 'ubuntu'
-    args: ['export', 'FLASK_APP=hello_world.py']
+    args: ['export', 'FLASK_APP=/workspace/hello_world.py']
     
   - name: 'python'
     args: ['flask', 'run', '--host', '0.0.0.0']
