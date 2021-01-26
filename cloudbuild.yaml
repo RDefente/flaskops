@@ -5,19 +5,14 @@ steps:
   - name: 'python'
     args: ['python3', '-m', 'venv', 'venv']
     
-  - name: 'cd'
-    args: ['venv/Scripts']
-  
-  - name: 'activate'
-  
-  - name: 'cd'
-    args: ['../../']
+  - name: 'ubuntu'
+    args: ['venv/Scripts/activate']
   
   - name: 'python'
     args: ['pip3', 'install', 'flask']
     
-  - name: 'set'
-    args: ['FLASK_APP=hello_world.py']
+  - name: 'ubuntu'
+    args: ['export', 'FLASK_APP=hello_world.py']
     
-  - name: 'flask'
-    args: ['run', '--host', '0.0.0.0']
+  - name: 'python'
+    args: ['flask', 'run', '--host', '0.0.0.0']
