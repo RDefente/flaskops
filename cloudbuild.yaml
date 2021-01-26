@@ -3,15 +3,6 @@ steps:
     args: ['-m', 'rsync', '-r', '-c', '-d', '.', 'gs://flask_ops']
   
   - name: 'python'
-    args: ['pip3', 'install', 'flask']
-    
-  - name: 'ubuntu'
-    args: ['echo', 'hello there!']
+    args: ['bash', '-c', 'pip3 install flask && man flask && flask run --host 0.0.0.0']
     env:
         - 'FLASK_APP=${_FLASK_APP}'
-        
-  - name: 'help'
-    args: ['man', 'flask']
-    
-  - name: 'python'
-    args: ['flask', 'run', '--host', '0.0.0.0']
