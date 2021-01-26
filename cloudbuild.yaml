@@ -6,6 +6,7 @@ steps:
     args: ['python3', '-m', 'venv', 'venv']
     
   - name: 'ubuntu'
+    args: ['ls', 'venv/bin']
     args: ['.', 'venv/bin/activate']
   
   - name: 'python'
